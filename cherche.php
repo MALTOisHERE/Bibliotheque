@@ -15,6 +15,11 @@ if (!empty($_POST['cherche'])) {
   $livreStatement->execute();
   $livres = $livreStatement->fetchAll();
 }
+
+  $livreAllStatement = $mysqlconnection->prepare('SELECT * FROM livres');
+  $livreAllStatement->execute();
+  $livresAll = $livreAllStatement->fetchAll()
+
 ?>
 
 <head>
@@ -25,7 +30,12 @@ if (!empty($_POST['cherche'])) {
   <h1>Bonjour <strong><?php echo $_SESSION['user'] ?></strong>, chercher un livre.</h1>
   <form action="cherche.php" method="post">
     <div>
-      <input type="text" name="cherche" placeholder="Chercher..." required style="width: 300px; ">
+      <input list="cherche" type="text" name="cherche" placeholder="Chercher..." required style="width: 300px; ">
+      <datalist id="cherche">
+      <?php foreach ($livresAll as $livreAll) { ?>
+        <option value="<?php echo $livreAll['titre'] ?>">
+        <?php } ?>
+      </datalist>
       <button type="submit" class="chercher-button" style="width: 100px;">Chercher</button>
     </div>
   </form>
