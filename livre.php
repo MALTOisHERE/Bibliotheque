@@ -55,4 +55,5 @@ $livres = $livreStatement->fetchAll();
 
 <?php }else{ ?>
  <h1 style="text-align: center;margin-top : 50px">404</h1>
+ <p style="text-align: center; color: grey">Connectez-vous!</p>
 <?php } ?>
