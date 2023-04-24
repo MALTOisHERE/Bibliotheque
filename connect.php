@@ -10,11 +10,11 @@ include "header.php";
     <form action="connect_valide.php" method="post">
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="email" id="email" name="email" placeholder="Email..." required>
         </div>
         <div class="form-group">
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="pass" placeholder="Mot de passe" required>
+            <input type="password" id="password" name="pass" placeholder="Mot de passe..." required>
         </div>
         <center>
             <div class="form-group">

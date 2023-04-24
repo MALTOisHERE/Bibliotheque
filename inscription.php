@@ -10,15 +10,15 @@ include "header.php";
     <form action="inscription_valide.php" method="post">
         <div class="form-group">
             <label for="name">Nom d'utilisateur</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Nom d'utilisateur..." required>
         </div>
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Email..." required>
         </div>
         <div class="form-group">
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="pass" required>
+            <input type="password" id="password" name="pass" placeholder="Mot de passe..." required>
         </div>
         <center>
             <div class="form-group">
