@@ -1,4 +1,3 @@
-
 body {
     background-color: #f2f2f2;
     font-family: Arial, sans-serif;
@@ -74,7 +73,7 @@ nav a:hover {
     color: #f8f9fa;
 }
 
-.alert-failed{
+.alert-failed {
     margin-top: 10px;
     text-align: center;
     background-color: red;
@@ -83,7 +82,7 @@ nav a:hover {
     padding: 5px;
 }
 
-.alert-success{
+.alert-success {
     margin-top: 10px;
     text-align: center;
     background-color: green;

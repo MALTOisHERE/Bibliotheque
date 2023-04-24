@@ -23,4 +23,3 @@ include "connectDB.php";
             $empStatement->execute();
             header("Location: livre.php?livre=".$_GET["livre"]."&error=0");
         }
-?>

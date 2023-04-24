@@ -15,4 +15,3 @@ header("Location: connect.php?error=2");
 }else{
     header("Location: inscription.php?error=1");
 }
-?>

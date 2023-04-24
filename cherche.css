@@ -6,7 +6,7 @@ body {
   background-color: #f0f0f0;
 }
 
-h1{
+h1 {
   margin-top: 20px;
   margin-left: 20px;
 }
@@ -61,7 +61,8 @@ table {
 }
 
 /* Add a border to all table cells */
-td, th {
+td,
+th {
   border: 1px solid #ddd;
   padding: 8px;
 }

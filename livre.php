@@ -25,7 +25,7 @@ $livres = $livreStatement->fetchAll();
         <p>Description : <?php echo $livre['description'] ?></p>
     <?php } ?>
     <button onclick="window.location.href='<?php echo 'emprunt.php?livre=' . $livre['id'] . '&user=' . $_SESSION['id']; ?>';">Emprunter</button>
-    
+
     <?php
     if (isset($_GET['error'])) {
         if ($_GET['error'] == 0) {

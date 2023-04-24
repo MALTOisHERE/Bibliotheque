@@ -21,18 +21,19 @@ include "header.php";
             <input type="password" id="password" name="pass" required>
         </div>
         <center>
-        <div class="form-group">
-            <input type="submit" name="login" value="S'inscrire">
-        </div>
+            <div class="form-group">
+                <input type="submit" name="login" value="S'inscrire">
+            </div>
         </center>
     </form>
     <?php
-    if (isset($_GET['error'])) {?>
+    if (isset($_GET['error'])) { ?>
         <?php if ($_GET['error'] == 1) { ?>
             <div class="alert-failed" id="alert-message">
                 <?php echo "Erreur d'inscription."; ?>
             </div>
-    <?php } } ?>
+    <?php }
+    } ?>
 </div>
 <script>
     // Hide the alert with fade-out effect after 3 seconds

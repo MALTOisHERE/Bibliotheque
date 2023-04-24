@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +11,7 @@
 <body>
     <nav>
         <div>
-            <a href="#">Logo</a>
+            <a href="">Logo</a>
         </div>
         <div>
             <a href="connect.php">Se connecter</a>

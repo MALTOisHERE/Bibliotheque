@@ -12,7 +12,7 @@
 <body>
 	<nav>
 		<div>
-			<a href="#">Logo</a>
+			<a href="">Logo</a>
 		</div>
 		<div>
 			<a href="cherche.php">Chercher</a>
