@@ -4,6 +4,7 @@ include "content_header.php";
 
 // Start session
 session_start();
+if(!empty($_SESSION['id'])){
 
 include "connectDB.php";
 if (!empty($_POST['cherche'])) {
@@ -74,3 +75,6 @@ if (!empty($_POST['cherche'])) {
 </body>
 
 </html>
+<?php }else{ ?>
+ <h1 style="text-align: center;margin-top : 50px">404</h1>
+<?php } ?>

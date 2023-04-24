@@ -4,6 +4,7 @@ $title = "Livre";
 include "connectDB.php";
 include "content_header.php";
 session_start();
+if (!empty($_SESSION['id'])) {
 
 $livreID = $_GET['livre'];
 $livreStatement = $mysqlconnection->prepare('SELECT * FROM livres where id = :id');
@@ -51,3 +52,7 @@ $livres = $livreStatement->fetchAll();
 </body>
 
 </html>
+
+<?php }else{ ?>
+ <h1 style="text-align: center;margin-top : 50px">404</h1>
+<?php } ?>
