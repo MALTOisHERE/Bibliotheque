@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 08:41 PM
+-- Generation Time: Apr 28, 2023 at 08:52 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -113,6 +113,14 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `nom`, `email`, `mot_de_passe`, `date_de_creation`) VALUES
+(57, 'admin', 'admin@gmail.com', 'admin', '0000-00-00'),
+(58, 'admin', 'admin@gmail.com', '@Admin1234', '2023-04-28');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -157,7 +165,7 @@ ALTER TABLE `livres`
 -- AUTO_INCREMENT for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- Constraints for dumped tables
