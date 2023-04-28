@@ -1,7 +1,5 @@
 <?php
-
 include "connectDB.php";
-include "content_header.php";
 session_start();
 
 if (isset($_GET['livre'], $_GET['user'])) {
@@ -15,7 +13,7 @@ if (isset($_GET['livre'], $_GET['user'])) {
 
     try {
       $livreStatement->execute();
-      header("Location: historique.php");
+      header("Location: historique.php?error=0");
     } catch (PDOException $e) {
       echo "Error: " . $e->getMessage();
     }

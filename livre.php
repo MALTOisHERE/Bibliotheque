@@ -1,59 +1,59 @@
 <?php
-$title = "Livre";
+$title = "Book";
+include "content_header.php";
 
 include "connectDB.php";
-include "content_header.php";
 session_start();
+
 if (!empty($_SESSION['id'])) {
 
-$livreID = $_GET['livre'];
-$livreStatement = $mysqlconnection->prepare('SELECT * FROM livres where id = :id');
-$livreStatement->bindParam(':id', $livreID);
-$livreStatement->execute();
-$livres = $livreStatement->fetchAll();
+    $livreID = $_GET['livre'];
+    $livreStatement = $mysqlconnection->prepare('SELECT * FROM livres where id = :id');
+    $livreStatement->bindParam(':id', $livreID);
+    $livreStatement->execute();
+    $livres = $livreStatement->fetchAll();
 
 ?>
 
-<head>
-    <link rel="stylesheet" href="livre.css">
-</head>
-<div class="container">
-    <?php foreach ($livres as $livre) { ?>
-        <h1><?php echo $livre['titre'] ?></h1>
-        <h3>par <?php echo $livre['auteur'] ?></h3>
-        <p>Année de publication : <?php echo $livre['annee_de_publication'] ?></p>
-        <p>ISBN : <?php echo $livre['ISBN'] ?></p>
-        <p>Description : <?php echo $livre['description'] ?></p>
-    <?php } ?>
-    <button onclick="window.location.href='<?php echo 'emprunt.php?livre=' . $livre['id'] . '&user=' . $_SESSION['id']; ?>';">Emprunter</button>
-
-    <?php
-    if (isset($_GET['error'])) {
-        if ($_GET['error'] == 0) {
-    ?>
-            <div class="alert-success" id="alert-message">
-                <?php echo "Le livre est bien emprunté."; ?>
+    <head>
+        <link rel="stylesheet" href="livre.css">
+    </head>
+    <div class="container" style="margin-top: 70px;">
+        <?php
+        if (isset($_GET['error'])) {
+            if ($_GET['error'] == 0) {
+        ?>
+                <div style="margin-bottom: 20px;" class="alert-success" id="alert-message">
+                    <?php echo "The book is well borrowed."; ?>
+                </div>
+            <?php } elseif ($_GET['error'] == 1) { ?>
+                <div style="margin-bottom: 20px;" class="alert-failed" id="alert-message">
+                    <?php echo "The book is already borrowed."; ?>
+                </div>
+        <?php }
+        } ?>
+        <?php foreach ($livres as $livre) { ?>
+            <div style="margin-bottom: 20px;text-align:center;" class="image-section">
+                <img style="width: auto;border-radius: 5px;border-color:#e9e9e9 ;border-style:solid;max-height:300px;border-width:1px" src="<?php echo $livre['image']; ?>" alt="<?php echo $livre['titre'] . " book picture." ?>">
             </div>
-        <?php } elseif ($_GET['error'] == 1) { ?>
-            <div class="alert-failed" id="alert-message">
-                <?php echo "Le livre est déjà emprunté."; ?>
-            </div>
-    <?php }
-    } ?>
-</div>
-<script>
-    // Hide the alert with fade-out effect after 3 seconds
-    $(document).ready(function() {
-        setTimeout(function() {
-            $("#alert-message").fadeOut(1000);
-        }, 3000);
-    });
-</script>
-</body>
+            <h1><strong><?php echo $livre['titre'] ?></strong></h1>
+            <h3>by <strong><?php echo $livre['auteur'] ?></strong></h3>
+            <p>Year of publication: <strong><?php echo $livre['annee_de_publication'] ?></strong></p>
+            <p>ISBN : <strong><?php echo $livre['ISBN'] ?></strong></p>
+            <p style="text-align: justify;">Description : <strong><?php echo $livre['description'] ?></strong></p>
+        <?php } ?>
+        <button style="font-size: 17px;" onclick="window.location.href='<?php echo 'emprunt.php?livre=' . $livre['id'] . '&user=' . $_SESSION['id']; ?>';">Borrow <i class="fas fa-cart-plus"></i></button>
+    </div>
+    <div>&nbsp;</div>
+    <script src="node.js"></script>
+    <script>
+        document.title = "<?php echo $title." ("; foreach ($livres as $livre) { echo $livre['titre'].") - Malto Bookstore";} ?>";
+    </script>
+    </body>
 
-</html>
+    </html>
 
-<?php }else{ ?>
- <h1 style="text-align: center;margin-top : 50px">404</h1>
- <p style="text-align: center; color: grey">Connectez-vous!</p>
+<?php } else { ?>
+    <h1 style="text-align: center;margin-top : 100px">404</h1>
+    <p style="text-align: center; color: grey"><a style="text-decoration: none;color: grey" href="connect.php">Log in <i class="fas fa-exclamation-triangle"></i></a></p>
 <?php } ?>

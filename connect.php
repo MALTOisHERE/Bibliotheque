@@ -1,26 +1,30 @@
 <?php
 
-$title = "Se connecter";
+$title = "Login";
 include "header.php";
 
 ?>
-
-<div class="login-container">
-    <h1>Se connecter</h1>
+<div style="display:flex;justify-content:center;margin-top: 90px" >
+<div style="height: auto; width: auto;background-color:white;border-radius: 5px;border-color:#e9e9e9;border-style:solid; border-width: 2px;">
+    <img style="height: 80px;padding:10px" src="images/logo/logo1.png" alt="">
+    </div>
+</div>
+<div class="login-container" style="margin-top: 30px;">
+    <h1>Log in</h1>
     <form action="connect_valide.php" method="post">
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email..." required>
+            <input title="Insert your email" type="email" id="email" name="email" placeholder="Email..." required>
         </div>
         <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="pass" placeholder="Mot de passe..." required>
+            <label for="password">Password</label>
+            <input title="Insert your password" type="password" id="password" name="pass" placeholder="Password..." required>
         </div>
         <center>
             <div class="form-group">
-                <input type="submit" name="login" value="Login">
+                <input title="Sign in" type="submit" name="login" value="Sign in">
             </div>
-            <a href="inscription.php">Vous n'avez pas de compte? Inscrivez-vous.</a>
+            <a style="font-size: smaller;text-decoration:underline" href="inscription.php">You don't have an account? Sign up.</a>
         </center>
     </form>
 
@@ -29,28 +33,21 @@ include "header.php";
         if ($_GET['error'] == 0) {
     ?>
             <div class="alert-success" id="alert-message">
-                <?php echo "Vous avez déconnecter."; ?>
+                <?php echo "You disconnected!"; ?>
             </div>
         <?php } elseif ($_GET['error'] == 1) { ?>
             <div class="alert-failed" id="alert-message">
-                <?php echo "Mot de passe ou email incorrect."; ?>
+                <?php echo "Incorrect password or email!"; ?>
             </div>
         <?php } elseif ($_GET['error'] == 2) { ?>
             <div class="alert-success" id="alert-message">
-                <?php echo "Inscription réussite. Connectez-vous!"; ?>
+                <?php echo "Registration successful. Log in!"; ?>
             </div>
     <?php }
     } ?>
 </div>
 
-<script>
-    // Hide the alert with fade-out effect after 3 seconds
-    $(document).ready(function() {
-        setTimeout(function() {
-            $("#alert-message").fadeOut(1000);
-        }, 3000);
-    });
-</script>
+<script src="node.js" ></script>
 
 </body>
 
