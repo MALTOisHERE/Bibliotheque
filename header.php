@@ -12,7 +12,14 @@
 </head>
 <style>
     .connect{transition:.3s;padding:3px 10px;background-color:#fff;border-radius:5px;border:1px solid #fff;color:#007bff;font-size:15px}.connect:hover{text-decoration:none;transition:.7s;background-color:#007bff}.image1{transition:.5s ease-in-out;filter:brightness(10000%)}.image1:hover{filter:brightness(100%)}nav{position:fixed;top:0;left:0;right:0}
+    body {
+        background-image: url(images/login-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
+<script src="node.js">
+</script>
 <body style="font-family: 'Poppins', sans-serif;" >
     <nav>
         <div>
