@@ -100,7 +100,7 @@ if (!empty($_SESSION['id'])) {
         <button style="font-size: 17px;" onclick="window.location.href='<?php echo 'emprunt.php?livre=' . $livre['id'] . '&user=' . $_SESSION['id']; ?>';">Borrow <i class="fas fa-cart-plus"></i></button>
     </div>
     <div>&nbsp;</div>
-    <script src="node.js"></script>
+    <script src="index.js"></script>
     <script>
         document.title = "<?php echo $title." ("; foreach ($livres as $livre) { echo $livre['titre'].") - Malto Bookstore";} ?>";
     </script>

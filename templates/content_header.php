@@ -19,7 +19,7 @@
         background-size: cover;
     }
 </style>
-<script src="node.js">
+<script src="index.js">
 </script>
 
 <body style="font-family: 'Poppins', sans-serif;">

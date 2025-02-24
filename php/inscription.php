@@ -15,7 +15,7 @@ include "header.php";
     loader.style.display = 'block';
   });
 </script>
-<script src="node.js"></script>
+<script src="index.js"></script>
 <div style="display:flex;justify-content:center;margin-top: 70px" >
 <div style="height: auto; width: auto;background-color:white;border-radius: 5px;border-color:#e9e9e9;border-style:solid; border-width: 2px;">
     <img style="height: 80px;padding:10px" src="images/logo/logo1.png" alt="">
